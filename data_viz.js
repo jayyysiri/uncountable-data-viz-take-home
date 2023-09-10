@@ -3,7 +3,7 @@
 "use strict";
 
 (function () {
-  const BASE_URL = "http://localhost:8000/";
+  const BASE_URL = "https://uncountable-take-home-jay-siri.onrender.com/";
   async function init() {
     let button = document.getElementById("goButton");
     button.addEventListener("click", async () => {
