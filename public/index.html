@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<!--
+     Author: Jay Siri
+     Date: Sep 20, 2023
+     This is the main HTML code for my Uncountable Take Home Assignment.
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Data Visualization</title>
+    <!-- Import styles and Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Overpass+Mono&family=Roboto+Mono:wght@400;500;600&family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Load plotly.js -->
+    <script
+      src="https://cdn.plot.ly/plotly-2.25.2.min.js"
+      charset="utf-8"
+    ></script>
+  </head>
+
+  <body>
+    <h2>EXPERIMENTAL DATA VISUALIZER</h2>
+    <div id="main_body">
+      <!-- Visualization -->
+      <div id="visualization">
+        <div id="scatter" style="width: 700px; height: 550px"></div>
+      </div>
+      <!-- Options Panel (Toolbar) -->
+      <div id="toolbar">
+        <!-- INPUT VARIABLE OPTIONS -->
+        <h3>INPUT</h3>
+        <label for="in_var">Variable</label><br />
+        <select name="input" id="input">
+          <option value="Polymer 1">Polymer 1</option>
+          <option value="Polymer 2">Polymer 2</option>
+          <option value="Polymer 3">Polymer 3</option>
+          <option value="Polymer 4">Polymer 4</option>
+          <option value="Carbon Black High Grade">
+            Carbon Black High Grade
+          </option>
+          <option value="Carbon Black Low Grade">Carbon Black Low Grade</option>
+          <option value="Silica Filler 1">Silica Filler 1</option>
+          <option value="Silica Filler 2">Silica Filler 2</option>
+          <option value="Plasticizer 1">Plasticizer 1</option>
+          <option value="Plasticizer 2">Plasticizer 2</option>
+          <option value="Plasticizer 3">Plasticizer 3</option>
+          <option value="Antioxidant">Antioxidant</option>
+          <option value="Coloring Pigment">Coloring Pigment</option>
+          <option value="Co-Agent 1">Co-Agent 1</option>
+          <option value="Co-Agent 2">Co-Agent 2</option>
+          <option value="Co-Agent 3">Co-Agent 3</option>
+          <option value="Curing Agent 1">Curing Agent 1</option>
+          <option value="Curing Agent 2">Curing Agent 2</option>
+          <option value="Oven Temperature">Oven Temperature</option>
+        </select>
+        <form>
+          <label for="in_min">Input Min</label><br />
+          <input type="text" id="in_min" name="in_min" /><br />
+          <label for="in_max">Input Max</label><br />
+          <input type="text" id="in_max" name="in_max" />
+        </form>
+        <!-- OUTPUT VARIABLE OPTIONS -->
+        <h3>OUTPUT</h3>
+        <label for="out_var">Variable</label><br />
+        <select name="output" id="output">
+          <option value="Viscosity">Viscosity</option>
+          <option value="Cure Time">Cure Time</option>
+          <option value="Elongation">Elongation</option>
+          <option value="Tensile Strength">Tensile Strength</option>
+          <option value="Compression Set">Compression Set</option>
+        </select>
+        <form>
+          <label for="out_min">Output Min</label><br />
+          <input type="text" id="out_min" name="out_min" /><br />
+          <label for="out_max">Output Max</label><br />
+          <input type="text" id="out_max" name="out_max" />
+        </form>
+        <!-- Go Button -->
+        <div id="buttonDiv"><button id="goButton">GO</button></div>
+      </div>
+    </div>
+  </body>
+  <!-- Include data visualziation script -->
+  <script src="data_viz.js"></script>
+</html>
