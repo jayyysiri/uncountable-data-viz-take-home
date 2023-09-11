@@ -101,7 +101,7 @@
     let output_var = document.getElementById("output").value;
     let in_min = Math.max(document.getElementById("in_min").value, 0);
     let in_max = document.getElementById("in_max").value || Infinity;
-    let out_min = Math.min(document.getElementById("out_min").value, 0);
+    let out_min = Math.max(document.getElementById("out_min").value, 0);
     let out_max = document.getElementById("out_max").value || Infinity;
     displayDataViz(input_var, output_var, in_min, in_max, out_min, out_max);
   }
