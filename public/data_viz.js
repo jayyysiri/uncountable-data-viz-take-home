@@ -68,9 +68,11 @@
     // Unzip the data to x and y arrays.
     let x_arr = new Array();
     let y_arr = new Array();
+    let exp_names = new Array();
     for (let i = 0; i < data.length; i++) {
       x_arr.push(data[i][0]);
       y_arr.push(data[i][1]);
+      exp_names.push(data[i][2]);
     }
     // Plot using plotly.js
     let scatter = document.getElementById("scatter");
@@ -82,6 +84,7 @@
           y: y_arr,
           mode: "markers",
           type: "scatter",
+          text : exp_names,
         },
       ],
       {
