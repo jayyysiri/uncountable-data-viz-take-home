@@ -36,6 +36,8 @@ app.get(
         "uncountable_front_end_dataset.json",
         "utf8"
       );
+      // Get exp names
+      let exp_names = Object.keys(JSON.parse(file_content_raw));
       // Get the input variable data
       let input_variable_data = getVariableData(
         file_content_raw,
@@ -53,7 +55,8 @@ app.get(
         req.params.in_min,
         req.params.in_max,
         req.params.out_min,
-        req.params.out_max
+        req.params.out_max,
+        exp_names
       );
       // Send all data to the endpoint
       res.json(final_input_output_datapoints);
@@ -97,7 +100,8 @@ function filter_datapoints(
   in_min,
   in_max,
   out_min,
-  out_max
+  out_max,
+  exp_names
 ) {
   let filtered_datapoints = new Array();
   for (let i = 0; i < input_data.length; i++) {
@@ -107,7 +111,7 @@ function filter_datapoints(
       output_data[i] >= out_min &&
       output_data[i] <= out_max
     ) {
-      filtered_datapoints.push([input_data[i], output_data[i]]);
+      filtered_datapoints.push([input_data[i], output_data[i], exp_names[i]]);
     }
   }
   return filtered_datapoints;
